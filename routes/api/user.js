@@ -117,4 +117,13 @@ router.get(
   }
 );
 
+// @route   GET api/users
+// @desc    Return All User
+// @access  Private
+router.get("/all", (req, res) => {
+  User.find().then(users => {
+    res.json(users);
+  });
+});
+
 module.exports = router;
